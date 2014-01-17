@@ -20,29 +20,39 @@ private $db;
 	
 	public function getAll(){
 	
-	$sql = "select * from usersInfo";
+	$sql = "select * from userContacts";
 	$st = $this->db->prepare($sql);
 	$st->execute();
 	
 	return $st->fetchAll();
 	
-	var_dump(getAll);
+	//var_dump(getAll);
 	
 	}
 
 public function getOne($id=0){
 
-	$sql = "select * from userContacts where id = :userID";
+	$sql = "select * from userContacts where userID = :userID";
 	$st = $this->db->prepare($sql);
-	$st->execute(array("userID"=>$id));
-	
+	$st->execute(array(":userID"=>$id));
+	var_dump($id);
 	return $st->fetchAll();
 	
-	var_dump(getOne);
 	
 
 
 }
+public function getDetails(){
+	
+	$sql = "select * from usersContacts";
+	$st = $this->db->prepare($sql);
+	$st->execute();
+	
+	return $st->fetchAll();
+	
+	//var_dump(getDetails);
+	
+	}
 
 }
 

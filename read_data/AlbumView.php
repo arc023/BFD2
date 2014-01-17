@@ -1,10 +1,12 @@
 <?php
 
+//UPDATE, IT'S NOT THERE ANYMORE
 
 class AlbumView{
+
 	//show header
 	public function showHeader($pageTitle = '') {
-			include "views/header.inc";
+			include 'views/header.inc';
 	}
 	//show footer
 	public function showFooter(){
@@ -16,7 +18,7 @@ class AlbumView{
 	}
 	//show details
 	public function showDetails($rows){
-			include "views/userDetails.inc";
+			include "views/details.inc";
 	}
 	
 }

@@ -2,7 +2,7 @@
 
 
 	foreach ($rows as $row) {
-			echo '<b>Name: <b>'			
+			echo "<b>Name: </b>";			
 			echo "<p></p>";
 			echo $row['firstname'];	
 			echo " ";
@@ -11,7 +11,7 @@
 			echo '<b>DoB: <b>';
 			echo $row['dob'];	
 			echo "<p></p>";
-			echo '<b>Email: <b>'
+			echo '<b>Email: <b>';
 			echo $row['notesID'];	
 			echo "<p></p>";
 		}
