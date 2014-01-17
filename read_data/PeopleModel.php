@@ -35,7 +35,7 @@ public function getOne($id=0){
 	$sql = "select * from userContacts where userID = :userID";
 	$st = $this->db->prepare($sql);
 	$st->execute(array(":userID"=>$id));
-	var_dump($id);
+	//var_dump($id);
 	return $st->fetchAll();
 	
 	
