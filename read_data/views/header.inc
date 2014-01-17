@@ -3,6 +3,7 @@
 <html>
 
 <head>
+<link href="css/style1.css" rel="stylesheet" type="text/css"/>
 <title>MVC READ DATA</title>
 </head>
 

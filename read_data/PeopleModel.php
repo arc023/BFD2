@@ -38,20 +38,6 @@ public function getOne($id=0){
 	//var_dump($id);
 	return $st->fetchAll();
 	
-	
-
-
-}
-public function getDetails(){
-	
-	$sql = "select * from usersContacts";
-	$st = $this->db->prepare($sql);
-	$st->execute();
-	
-	return $st->fetchAll();
-	
-	//var_dump(getDetails);
-	
 	}
 
 }

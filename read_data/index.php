@@ -14,14 +14,8 @@ $rows = $model->getAll();
 
 
 
-
  $view->getView('views/header.inc');
 
-
-//THIS - THIS DOES NOT WORK. HELP PLZ
-
-//$result = $model->getAll();
-//$view->getView('views/lastUser.inc',$rows);
 
 if(!empty($_GET["action"])){
 		
@@ -42,8 +36,6 @@ if(!empty($_GET["action"])){
 		$view->getView('views/lastUser.inc',$result);
 		}
 		
-/*	
-*/
 
 $view->getView('views/footer.inc');
 
