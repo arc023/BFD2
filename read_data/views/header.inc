@@ -10,13 +10,21 @@
 <body>
 <h1>MVC read data assignment</h1>
 <p>Anna Carlson's address book</p>
+
 <?php
-if($_SESSION['loggedin']==1){
-echo "<a href='/index.php?action=logout'>Logout</a>";
 
-}else "<a href='/index.php?action=login'>Login</a>";
-
+ if($_SESSION['loggedin']==1){
+ echo "<a href='index.php?action=logout'>Logout</a>";
+ echo "<p></p>";
+ echo " <a href='protected.php=add'>add a contact</a>";
+ echo "<p></p>";
+ 
+ }else{
+ echo "<a href='index.php?action=login'>Login</a>";
+echo "<p></p>";
+ 
+ 
+ }
 
 
 ?>
-

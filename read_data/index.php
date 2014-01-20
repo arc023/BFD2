@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once "db.php";
 require_once "PeopleModel.php";
@@ -21,8 +22,8 @@ if(@$_GET["action"]!="checklogin" && @$_GET["action"]!="logout"){
 	}
 	
 //initial list/screen
-if(!empty($_GET["action"])){
-		
+	if(!empty($_GET["action"])){
+
 		//if action = home full list (action is in url/anchor)
 	if($_GET["action"]=="home"){
 		
@@ -33,21 +34,21 @@ if(!empty($_GET["action"])){
 	}if($_GET["action"]=="details"){
 		$result = $model->getOne($_GET['id']);
 		$view->getView('views/details.inc',$result);
-		
+
 		//if action = login go to form
 	}if($_GET["action"]=='login'){
-		$views->getView("views/loginform.html");
+		$view->getView("views/loginform.html");
 		
 		//if action is checklogin go check table information
 	}if($_GET["action"]=='checklogin'){
-		$result = $model->checklogin($_post['usern'],$_post['passw']);
+		$result = $model->checklogin($_POST['usern'],$_POST['passw']);
 		
 			if(count($result)>0){
 				header("location: protected.php");
 			}else{
-				$views->getView("views/header.inc");
+				$view->getView("views/header.inc");
 				echo "login error, sorry";
-				$views->getView("views/loginform.html");
+				$view->getView("views/loginform.html");
 			}
 	
 	}if($_GET["action"]=='logout'){
@@ -58,7 +59,7 @@ if(!empty($_GET["action"])){
 		}
 	
 	}else{
-	
+		//if action = home full list (action is in url/anchor)
 		$result = $model->getAll();
 		$view->getView('views/lastUser.inc',$result);
 		}
