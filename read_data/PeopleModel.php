@@ -39,8 +39,43 @@ public function getOne($id=0){
 	return $st->fetchAll();
 	
 	}
+	
+public function checklogin($usern='', $passw=''){
 
+	$sql = "select * from usersInfo where username = :username and u_password= :u_password";
+	$st = $this->db->prepare($sql);
+	$st->execute(array(":username"=>$usern, ":u_password"=>$passw));
+	
+	$num=$st->rowCount();
+	
+	if($num>0){
+	
+		$_SESSION['loggedin'] = 1;
+	
+	}else{
+	
+		$_SESSION['loggedin'] = 0;
+	
+	}
+	
+	return $st->fetchAll(PDO::FETCH_COLUMN, 0);
+	}
+	
+public function logout(){
+	
+	$_SESSION['loggedin'] = 0;	
+	
+	}
+	
+//closing brace	
 }
+
+
+
+
+
+
+
 
 
 	
