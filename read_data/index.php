@@ -17,6 +17,8 @@ $view = new viewModel();
 
 
 //@var = documenting data types
+
+
 if(@$_GET["action"]!="checklogin" && @$_GET["action"]!="logout"){
 		$view->getView('views/header.inc');
 	}
