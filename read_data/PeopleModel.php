@@ -67,6 +67,13 @@ public function logout(){
 	
 	}
 	
+public function update($id=0, $notesID='', $firstname='', $lastname='', $dob=''){
+	$sql = 'update userContacts set notesID = :notesID, firstname=:firstname, lastname=:lastname, dob=:dob where id=:id';
+	$st = $this->db->prepare($sql);
+	$st->execute(array(':id'=>$id, 'notesID'=>$notesID, ':firstname'=>$firstname, ':lastname'=>$lastname, ':dob'=>$dob));
+
+}
+	
 //closing brace	
 }
 

@@ -11,9 +11,9 @@
 			echo '<b>Email: </b>';
 			echo $row['notesID'];	
 			echo "<p></p>";
-			echo " <a href=''> Update</a>"
+			echo " <a href='?action=update&id".$row["id"]."'> Update</a>";
 			echo "<p></p>";
-			echo " <a href=''> Delete</a>"
+			echo "<a href='?action=delete&id".$row["id"]."'> Delete</a>";
 		}
 
 

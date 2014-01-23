@@ -12,9 +12,11 @@
 <p>Anna Carlson's address book. Login info: username = th password = th</p>
 
 <?php
-if (isset($_SESSION['loggedin']))
+if (isset($_SESSION['loggedin'])){
 
 	if($_SESSION['loggedin'] == 1){
+		//var_dump($_SESSION);
+		
  		echo "<a href='index.php?action=logout'>Logout</a>";
  		echo "<p></p>";
  		echo " <a href='protected.php=add'>add a contact</a> <a href='protected.php=delete'>delete a contact</a>";
@@ -27,5 +29,8 @@ if (isset($_SESSION['loggedin']))
  
 	 }
 
-
+}else{
+echo "<a href='index.php?action=login'>Login</a>";
+		echo "<p></p>";
+		}
 ?>
