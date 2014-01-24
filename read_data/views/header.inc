@@ -19,7 +19,7 @@ if (isset($_SESSION['loggedin'])){
 		
  		echo "<a href='index.php?action=logout'>Logout</a>";
  		echo "<p></p>";
- 		echo " <a href='protected.php=add'>add a contact</a> <a href='protected.php=delete'>delete a contact</a>";
+ 		echo " <a href='protected.php?action=add'>add a contact</a> <a href='protected.php'>Edit contacts view</a> <a href='index.php'>Home</a>";
  		echo "<p></p>";
  
 	 }else{
