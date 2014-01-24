@@ -23,7 +23,7 @@ if(!empty($_GET["action"])){
     		$view->getView('views/updateform.html', $result);
     		
     	}else if($_GET['action']=='updateaction'){
-    		$model->update($_GET['id'], $_POST['firstname'],$_POST['lastname'],$_POST['dob'],$_POST['notesID']);
+    		$model->update( $_POST['firstname'],$_POST['lastname'],$_POST['dob'], $_POST['notesID'],$_GET['id']);
     		$result = $model->getAll();
     		$view->getView('views/protected.php', $result);  
     		  	
@@ -41,7 +41,7 @@ if(!empty($_GET["action"])){
     		$view->getView("views/addform.html");
     	
     	}else if($_GET['action']=='addaction'){
-    		$model->add($_POST['firstname'],$_POST['lastname'],$_POST['dob'],$_POST['notesID']);
+    		$model->add($_POST['firstname'],$_POST['lastname'],$_POST['dob'], $_POST['notesID']);
     		$result = $model->getAll();
     		$view->getView('views/protected.php', $result);
     		

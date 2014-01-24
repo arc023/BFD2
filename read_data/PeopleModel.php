@@ -67,10 +67,10 @@ public function logout(){
 	
 	}
 	
-public function update($id=0, $notesID='', $firstname='', $lastname='', $dob=''){
-	$sql = 'update userContacts set notesID = :notesID, firstname=:firstname, lastname=:lastname, dob=:dob where id=:id';
+public function update( $firstname='', $lastname='', $dob='',$notesID='', $id=0){
+	$sql = 'update userContacts set firstname=:firstname, lastname=:lastname, dob=:dob, notesID=:notesID, where userID = :userID';
 	$st = $this->db->prepare($sql);
-	$st->execute(array(':id'=>$id, ':notesID'=>$notesID, ':firstname'=>$firstname, ':lastname'=>$lastname, ':dob'=>$dob));
+	$st->execute(array( ':firstname'=>$firstname, ':lastname'=>$lastname, ':dob'=>$dob,  ':notesID'=>$notesID, ':userID'=>$id));
 
 }
 public function delete($id=0){
@@ -80,11 +80,11 @@ public function delete($id=0){
 	
 }
 
-public function add($notesID='', $firstname='', $lastname='', $dob=''){
+public function add( $firstname='', $lastname='', $dob='', $notesID=''){
 	$sql= 'insert into userContacts(firstname, lastname, dob, notesID)
 						values (:firstname, :lastname, :dob, :notesID)';
 	$st = $this->db->prepare($sql);
-	$st-> execute(array('notesID'=>$notesID, ':firstname'=>$firstname, ':lastname'=>$lastname, ':dob'=>$dob));
+	$st-> execute(array( ':firstname'=>$firstname, ':lastname'=>$lastname, ':dob'=>$dob, 'notesID'=>$notesID));
 
 }
 	

@@ -3,10 +3,11 @@ foreach($rows as $row){
 
 ?>
 
-<form action='?action=updateaction&id=<?$row['id']?>' method="post">
-<input type='text' name='firstname' value='<?=$row['firstname']?>'/> 
-<input type='text' name='lastname' value='<?=$row['lastname']?>'/>
-<input type='text' name='dob' value='<?=$row['dob']?>'/>
-<input type='text' name='email' value='<?=$row['notesID']?>'/>
+<form action="?action=updateaction&id=<?$row['id']?>" method="post">
+<input type='text' name='firstname' value="<?=$row['firstname']?>"/> 
+<input type='text' name='lastname' value="<?=$row['lastname']?>"/>
+<input type='text' name='dob' value="<?=$row['dob']?>"/>
+<input type='text' name='email' value="<?=$row['notesID']?>"/>
+<input type='submit' value='update'/>
 
 <?php } ?>
