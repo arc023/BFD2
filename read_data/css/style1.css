@@ -1,6 +1,10 @@
 body {
-margin: 15;
-padding: 15;
+max-width: 900px;
+margin: 0 auto;
 background-color: #eef6fd;
+font-family: Verdana, Helvetica, Arial, sans-serif;
+}
 
+h1 {
+text-shadow: 2px 2px 2px #BDBDBD;
 }
